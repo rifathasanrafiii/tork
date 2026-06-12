@@ -5,14 +5,20 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from tokenizers import Tokenizer
 
+from torkai.agent import TorkAgent
 from torkai.model import GPT, GPTConfig
 
 app = FastAPI(title="Tork AI")
+agent = TorkAgent()
 
 
 class GenerateRequest(BaseModel):
     prompt: str
     max_new_tokens: int = 80
+
+
+class AgentRequest(BaseModel):
+    command: str
 
 
 @app.get("/health")
@@ -39,3 +45,9 @@ def generate(request: GenerateRequest):
     x = torch.tensor([ids], dtype=torch.long, device=device)
     y = model.generate(x, request.max_new_tokens)
     return {"text": tokenizer.decode(y[0].tolist())}
+
+
+@app.post("/agent")
+def run_agent(request: AgentRequest):
+    result = agent.run(request.command)
+    return {"action": result.action, "output": result.output}
