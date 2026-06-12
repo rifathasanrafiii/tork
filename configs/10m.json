@@ -1,0 +1,15 @@
+{
+  "train_text": "data/processed/corpus.txt",
+  "tokenizer_path": "artifacts/tokenizer.json",
+  "checkpoint_dir": "checkpoints",
+  "checkpoint_name": "tork_10m.pt",
+  "block_size": 256,
+  "n_layer": 10,
+  "n_head": 8,
+  "n_embd": 256,
+  "dropout": 0.1,
+  "batch_size": 16,
+  "learning_rate": 0.0003,
+  "epochs": 3,
+  "max_steps": 5000
+}
