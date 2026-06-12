@@ -1,0 +1,10 @@
+Ami ekta AI banate chai.
+Ei AI Bangla and English mixed kore kotha bolbe.
+Tork AI is a small language model trained from scratch.
+It learns patterns from text and generates the next tokens.
+Rifat wants a personal AI model that can grow step by step.
+Start small, test the pipeline, then train a bigger model with more data.
+Machine learning needs data, compute, code, and patience.
+Bangla English mixed style is useful for everyday chat.
+This sample corpus is only for testing the training pipeline.
+Real quality needs thousands or millions of lines of clean text.
